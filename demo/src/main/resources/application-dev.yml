@@ -1,0 +1,21 @@
+#dev开发环境配置文件
+#指定服务运行端口
+server:
+  port: 9099
+
+#指定数据源
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/eesy_mybatis?useUnicode=true&characterEncoding=UTF-8&useOldAliasMetadataBehavior=true&allowMultiQueries=true&serverTimezone=UTC
+    username: root
+    password: 123456
+
+#告诉springboot你的Mybatis映射关系配置在哪里
+mybatis:
+  # 别名
+  type-aliases-package: com.cnbisoft.demo
+  # mybatis 配置文件 要扫描的路径
+  mapper-locations: classpath:com/cnbisoft/demo/mapper/xml/*.xml
